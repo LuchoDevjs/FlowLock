@@ -1,0 +1,10 @@
+{
+  "name": "Modo de Trabajo Profundo",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Mejora tu productividad bloqueando distracciones.",
+
+  "action": {
+    "default_popup": "index.html"
+  }
+}
