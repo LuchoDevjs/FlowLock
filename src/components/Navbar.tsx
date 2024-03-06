@@ -1,31 +1,28 @@
-import {
-  IoHourglassOutline,
-  IoSettingsOutline,
-  IoHomeOutline,
-} from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const navLinks = [
+  { to: "/focustimer", text: "Inicio" },
+  { to: "/timersettings", text: "Configuración" },
+];
 
 const Navbar = () => {
   return (
-    <nav className="flex flex-row justify-center items-center gap-5">
-      <Link to="/focustimer">
-        <div className="flex flex-col items-center cursor-pointer">
-          <IoHomeOutline size={20} />
-          <p>Inicio</p>
-        </div>
-      </Link>
-      <Link to="/timermode">
-        <div className="flex flex-col items-center cursor-pointer">
-          <IoHourglassOutline size={20} />
-          <p>Modo de temporizador</p>
-        </div>
-      </Link>
-      <Link to="timersettings">
-        <div className="flex flex-col items-center cursor-pointer">
-          <IoSettingsOutline size={20} />
-          <p>Configuración</p>
-        </div>
-      </Link>
+    <nav className="flex flex-row justify-center items-center gap-5 m-5">
+      {navLinks.map(({ to, text }) => (
+        <NavLink
+          key={to}
+          to={to}
+          className={({ isActive }) =>
+            isActive
+              ? "border-dotted border-b-2 border-[#3c3c3c] shadow-lg shadow-[#1f1f1f]"
+              : "border-b-2 border-transparent"
+          }
+        >
+          <div className="flex flex-col items-center cursor-pointer p-1">
+            <p>{text}</p>
+          </div>
+        </NavLink>
+      ))}
     </nav>
   );
 };

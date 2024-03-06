@@ -4,5 +4,5 @@
 
 html,
 body {
-  @apply bg-black text-[#fafafa] h-[300px] w-[500px];
+  @apply bg-black text-[#bbbbbb] h-[500px] w-[600px] font-font font-extralight;
 }
